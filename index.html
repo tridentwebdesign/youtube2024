@@ -244,16 +244,16 @@
             console.log(obj);
             movieid.innerHTML = ""; //初期化（中身を削除）
 
-            for (let i in obj["items"]) {
+            for (let movie of obj["items"]) {
               //各videoIdとタイトルを取得
-              // console.log(obj["items"][i]["id"]["videoId"]);
-              // console.log(obj["items"][i]["snippet"]["title"]);
+              // console.log(movie["id"]["videoId"]);
+              // console.log(movie["snippet"]["title"]);
 
               const selectvideo = document.querySelector(".searchlist");
 
               //各videoIdとタイトルを取得して変数に代入
-              const ytId = obj["items"][i]["id"]["videoId"];
-              const ytTitle = obj["items"][i]["snippet"]["title"];
+              const ytId = movie["id"]["videoId"];
+              const ytTitle = movie["snippet"]["title"];
               //optionを作成して、videoIdとtitleを所定の場所に設置し、要素を追加していく。
               const optionTag = document.createElement("option");
               optionTag.textContent = ytTitle;
